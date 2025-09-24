@@ -1,7 +1,9 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const PORT = 4000;
 
+app.use(cors());
 app.use(express.json());
 
 // In-memory storage
@@ -10,16 +12,19 @@ const SUBMISSIONS = [];
 
 const QUESTIONS = [
   {
-    title: "Two states",
-    description: "Given an array, return the maximum of the array?",
-    testCases: [
-      {
-        input: "[1,2,3,4,5]",
-        output: "5"
-      }
-    ]
+    "id": 201,
+    "title": "Bitwise AND of Numbers Range",
+    "difficulty": "Medium",
+    "acceptance": "42%"
+  },
+  {
+    "id": 202,
+    "title": "Happy Number",
+    "difficulty": "Easy",
+    "acceptance": "54.9%"
   }
 ];
+
 
 // Test route
 app.get('/hello', (req, res) => {
